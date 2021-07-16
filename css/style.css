@@ -1,0 +1,538 @@
+body{
+    color:black;
+    background-color: #5252525c;
+    background-image: url(https://srkitech.github.io/images/bg.png);
+    background-position: top left;
+    background-repeat: repeat;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: underline;
+}
+
+.row{
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1920px;
+    padding-bottom: 10px;
+    overflow: hidden; 
+}
+
+.navbar{
+    margin: 0;
+    padding:0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #424242;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,.53);
+    font-size: 14px;
+}
+
+.navbar a{
+    font-size: 14px;
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar ul{
+    width: 100%;
+}
+
+.navbar h1{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-toggler-icon{
+    width: 100%;
+}
+
+.navbar-toggler{
+    width: 15px;
+    padding: 0;
+}
+
+/* 4 page na v
+@media only screen and (max-width: 768px) {
+    .nav-fill .nav-item, .nav-fill>.nav-link{
+        display: inline-block;
+        width: 50%;
+    }
+}
+*/
+
+.nav-link{
+    padding: .5rem!important;
+}
+
+.author{
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1920px;
+}
+
+.author a{
+    margin: 0 auto;
+    font-size: 14px;
+    display: inline;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.author a:hover{
+    text-decoration: none;
+}
+
+h2.name{
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 36px;
+    color:white;
+    text-align: center;
+}
+
+h2.trade{
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    color:white;
+    text-align: center;
+}
+
+.bio_text h2{
+    margin:0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: normal;
+    display: inline;
+}
+
+.bio_text{
+    padding: .5em 1.7em .5em 1.7em;
+    margin: auto;
+    border: 0;
+    font-style: italic;
+}
+
+.bio_text:before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 3em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "\201C";
+}
+
+.bio_text:after {
+    font-family: Georgia, serif;
+    position: absolute;
+    float:right;
+    font-size:3em;
+    line-height: 1;
+    right:0;
+    bottom:-0.5em;
+    content: "\201D";
+}
+
+.page_title h2{
+    margin:0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: normal;
+    display: inline;
+}
+
+.bio_text h3{
+    margin: 0!important;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: normal;
+    display: inline;
+}
+
+.desc h3.title{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.text-center h3{
+    display: inline;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+h3{
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    display: inline;
+}
+
+h3.author{
+    margin-top: 5px;
+    text-align: center;
+    font-size: 14px;
+    height: 21px;
+}
+
+h4{
+    margin:0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: normal;
+    display: inline;
+}
+
+h5{
+    margin:0;
+    padding: 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: normal;
+    display: inline;
+}
+
+.wrapHeader{
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 0;
+    width:280px;
+    height: 300px;
+    overflow: hidden;
+    text-align: center;
+    flex: none;
+}
+
+.MyPhoto{
+    border:4px solid #424242;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.MyLogo{
+    margin: 0 auto;
+    width: 200px;
+    height:60px;
+}
+
+.language{
+    width: 86%;
+    height: 35px;
+    position: absolute;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.language .portfolio{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url("../images/portfolio.png");
+    background-size: contain;
+    float: left;
+    border: 1px solid #424242;
+    border-radius: 50%;
+}
+
+.language .serbian{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url("../images/serbian.png");
+    background-size: contain;
+    float: left;
+    border: 1px solid #424242;
+    border-radius: 50%;
+}
+
+.language .eu-english{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url("../images/european.png");
+    background-size: contain;
+    float: left;
+    border: 1px solid #424242;
+    border-radius: 50%;
+}
+
+.language .dropbox{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url("../images/dropbox.png");
+    background-size: contain;
+    float: right;
+    border: 1px solid #424242;
+    border-radius: 50%;
+}
+
+
+.wrapSocial{
+    background: linear-gradient(to bottom,rgb(0 0 0 / 0%) 18px,#424242 18px,#424242 22px,rgb(0 0 0 / 0%) 22px);
+}
+
+.MySocial{
+    margin: 0 auto;
+    padding: 0;
+    width: 85px;
+    list-style: none;
+    height: 35px;
+    background-image: url(https://srkitech.github.io/images/social_btn/social.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.MySocial li{
+    margin-left: 5px;
+    float: left;
+    width: 35px;
+    height: 35px;
+}
+
+.MySocial li a{
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 35px;
+    height: 35px;
+}
+
+/* About */
+
+.page-content{
+    box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #efefef;
+}
+
+.pager{
+    float:left;
+    margin-right: 5px;
+}
+
+.NoP{
+    padding: 0;
+}
+
+.NoM{
+    margin: 0;
+}
+
+.txtC{
+    text-align: center;
+}
+
+.page_title{   
+    display: block;
+    font-size: 16px;
+    text-align: center; 
+}
+
+.skills1{
+    background: linear-gradient(to bottom,rgb(0 0 0 / 0%) 45px,#efefef 45px,#efefef 55px,rgb(0 0 0 / 0%) 55px),linear-gradient(to bottom,rgb(0 0 0 / 0%) 42px,#42424238 42px,#42424238 58px,rgb(0 0 0 / 0%) 58px);
+}
+
+.skills2{
+    background: repeating-linear-gradient(-45deg,#42424238,#efefef 4px,#efefef 10px);
+    border-radius: 10px;
+}
+
+.skills1 .rarrow{
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: #efefef;
+    position: absolute;
+    top: 28px;
+    right: 0px;
+}
+
+@media only screen and (max-width: 349px) {
+    .skills1 .larrow{
+        display: none;
+    }
+    .skills1 .rarrow{
+      display: none;
+    }
+}
+
+.arrow-right2{
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #42424238;
+    position: absolute;
+    top: 2px;
+    background-color: #efefef;
+}
+
+.arrow-right3{
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid #efefef;
+    position: absolute;
+    top: 6px;
+}
+
+.skills_icon{
+    position: relative;
+    font-size: 32px;
+    display: block;
+    height: 10px;
+    top: -32px;
+}
+
+.skills_list{
+    background-color: white;
+    padding: 10px;
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.skills_title{
+    display: block;
+    margin:  0 auto;
+    height:20px;
+    font-size: 16px;
+}
+
+.skills_list li{
+    text-align: center!important;
+}
+
+.underline{
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.list_block{
+    list-style: square;
+}
+
+.skills_text{
+    float: left;
+}
+
+
+/* Projects and Artwork */
+
+.projectsart{
+    margin-top:10px;
+    text-align: center;
+    float: left;
+}
+
+.projectsart img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px -5px rgba(0,0,0,.53);
+}
+
+/* Footer */
+
+.footer{
+    padding: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #424242;
+    box-shadow: 5px -5px 15px -5px rgba(0,0,0,.53);
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer a{
+    color: white;
+    text-decoration: underline;
+}
+
+.footer a:hover{
+    text-decoration: none;
+}
+
+.deklaracija{
+    color: black;
+}
+
+.deklaracija:hover{
+    text-decoration: none;
+    color: black;
+}
+
+/* LatoCyr */
+
+.marginTop{
+    margin: auto;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.marginBot{
+    margin-bottom: 10px;
+}
+
+.f_btn .button{
+    float: left;
+}
+
+.f_btn .button input{
+    width: 100%;
+    text-align: center;
+}
+
+#textbox{
+    margin-top: 10px;
+    resize: none;
+    width: 100%;
+    height: 150px;
+}
+
+/* PdvKalk */
+
+.marginTop input{
+    width: 100%;
+    text-align: center;
+}
+
+.marginTop select{
+    width: 100%;
+    text-align: center;
+    height: 30px;
+}
+
+.marginTop .button{
+    float: left;
+}
+
+.marginTop .button2{
+    margin:  0 auto;
+}
+
+.Mfix{
+    margin-bottom: 0;
+    display: block;
+    height: 30px;
+    padding-top: 4px;
+    text-align: center;
+}

@@ -1,0 +1,413 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    background: #fff;
+    overflow: hidden;
+    opacity: 0;
+    font-family: "Yesteryear";
+  }
+  body.loaded {
+    -webkit-animation: fadeIn 1s ease-in-out 1 forwards 3s;
+            animation: fadeIn 1s ease-in-out 1 forwards 3s;
+  }
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  body audio {
+    opacity: 0;
+  }
+  body button {
+    position: absolute;
+    top: 60px;
+    right: 100px;
+    border: 3px solid #444;
+    z-index: 999;
+    outline: none;
+    background: transparent;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    background: #554d73;
+    border-radius: 3px;
+    filter: url(#squiggle);
+    pointer-events: all;
+  }
+  body button:hover {
+    background: #a5a7bb;
+  }
+  body button:hover i {
+    color: #444;
+  }
+  body button.playing i {
+    transform: translate(-50%, calc(-50% - 75px));
+  }
+  body button.playing i:last-of-type {
+    transform: translate(-50%, -50%);
+  }
+  body button i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #a5a7bb;
+    transition: 0.3s ease-in-out;
+  }
+  body button i:last-of-type {
+    transform: translate(-50%, calc(-50% + 75px));
+  }
+  body input {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 998;
+  }
+  body input:checked ~ #outer #wrap svg {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  body input:checked ~ #outer #wrap .inner:before {
+    transform: translateX(calc(-100% - 103px));
+  }
+  body input:checked ~ #outer #container:before {
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+  body input:checked ~ #outer #container video {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  body #outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    background: #fff;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: scale(0.75);
+  }
+  body #outer:before {
+    content: "";
+    position: absolute;
+    width: 890px;
+    height: 620px;
+    box-shadow: 0 0 0 4px #444, 0 0 0 50px #fff;
+    z-index: 99;
+    filter: url(#squiggle);
+  }
+  body:hover #container:after {
+    content: "click me";
+  }
+  body:hover #container:before {
+    transform: translate(-50%, -50%) scaleX(0.5);
+  }
+  body:hover #wrap svg {
+    -webkit-clip-path: polygon(0 0, 45% 0, 45% 100%, 0% 100%);
+            clip-path: polygon(0 0, 45% 0, 45% 100%, 0% 100%);
+  }
+  body:hover #wrap .frame:after {
+    transform: translateY(-35px);
+  }
+  body:hover #wrap .frame:nth-of-type(2):after {
+    transform: translateY(35px);
+  }
+  body:hover #wrap .inner:before {
+    transform: translateX(calc(-50% - 50px));
+  }
+  body #wrap,
+  body #btnwrap {
+    position: absolute;
+    width: 890px;
+    height: 620px;
+    z-index: 100;
+    pointer-events: none;
+  }
+  body #wrap svg,
+  body #btnwrap svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    filter: url(#squiggle);
+    transition: 0.6s ease-in-out;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  body #wrap svg path,
+  body #btnwrap svg path {
+    stroke: #333;
+    stroke-linecap: round;
+    stroke-dasharray: 300px;
+    stroke-dashoffset: 2900px;
+    -webkit-animation: strokes 6s steps(20, end) infinite, width 3s steps(20, end) infinite;
+            animation: strokes 6s steps(20, end) infinite, width 3s steps(20, end) infinite;
+    stroke-width: 0px;
+  }
+  body #wrap svg path:nth-of-type(1),
+  body #btnwrap svg path:nth-of-type(1) {
+    -webkit-animation-delay: 1.5s, 1.5s;
+            animation-delay: 1.5s, 1.5s;
+  }
+  body #wrap svg path:nth-of-type(2),
+  body #btnwrap svg path:nth-of-type(2) {
+    -webkit-animation-delay: 2s, 2s;
+            animation-delay: 2s, 2s;
+  }
+  body #wrap svg path:nth-of-type(3),
+  body #btnwrap svg path:nth-of-type(3) {
+    -webkit-animation-delay: 2.5s, 2.5s;
+            animation-delay: 2.5s, 2.5s;
+  }
+  body #wrap svg path:nth-of-type(4),
+  body #btnwrap svg path:nth-of-type(4) {
+    -webkit-animation-delay: 3s, 3s;
+            animation-delay: 3s, 3s;
+  }
+  body #wrap svg path:nth-of-type(5),
+  body #btnwrap svg path:nth-of-type(5) {
+    -webkit-animation-delay: 3.5s, 3.5s;
+            animation-delay: 3.5s, 3.5s;
+  }
+  body #wrap svg path:nth-of-type(6),
+  body #btnwrap svg path:nth-of-type(6) {
+    -webkit-animation-delay: 4s, 4s;
+            animation-delay: 4s, 4s;
+  }
+  @-webkit-keyframes width {
+    25% {
+      stroke-width: 3px;
+    }
+    50% {
+      stroke-width: 0px;
+    }
+    100% {
+      stroke-width: 0px;
+    }
+  }
+  @keyframes width {
+    25% {
+      stroke-width: 3px;
+    }
+    50% {
+      stroke-width: 0px;
+    }
+    100% {
+      stroke-width: 0px;
+    }
+  }
+  @-webkit-keyframes strokes {
+    100% {
+      stroke-dashoffset: 800px;
+    }
+  }
+  @keyframes strokes {
+    100% {
+      stroke-dashoffset: 800px;
+    }
+  }
+  body #wrap .inner,
+  body #btnwrap .inner {
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 10px);
+    overflow: hidden;
+    left: 0;
+    top: -5px;
+  }
+  body #wrap .inner:before,
+  body #btnwrap .inner:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0 4px #444, 0 0 0 100px #fff, 0 0 0 104px #444;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    filter: url(#squiggle);
+    transition: 0.6s ease-in-out;
+  }
+  body #wrap .frame,
+  body #btnwrap .frame {
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    top: -75px;
+    left: -100px;
+    z-index: 99;
+    transform-style: preserve-3d;
+  }
+  body #wrap .frame:nth-of-type(2),
+  body #btnwrap .frame:nth-of-type(2) {
+    width: 200px;
+    height: 150px;
+    top: calc(100% - 75px);
+    left: calc(100% - 125px);
+  }
+  body #wrap .frame:nth-of-type(2):before,
+  body #btnwrap .frame:nth-of-type(2):before {
+    background: url(https://media.giphy.com/media/5brOigokOC6AyC9i7X/giphy.gif) 50% 50%/cover;
+    filter: url(#squiggle) saturate(0) contrast(2);
+  }
+  body #wrap .frame:nth-of-type(2):after,
+  body #btnwrap .frame:nth-of-type(2):after {
+    left: -15px;
+    top: -15px;
+    background: #a496a4;
+  }
+  body #wrap .frame:before, body #wrap .frame:after,
+  body #btnwrap .frame:before,
+  body #btnwrap .frame:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 4px #444;
+    z-index: 99;
+    filter: url(#squiggle) saturate(0) contrast(1.5);
+  }
+  body #wrap .frame:before,
+  body #btnwrap .frame:before {
+    background: url(https://media.giphy.com/media/bJjSrvGSPbtmw/giphy.gif) 50% 50%/cover;
+  }
+  body #wrap .frame:after,
+  body #btnwrap .frame:after {
+    z-index: -1;
+    top: 25px;
+    left: 25px;
+    background: #a5a7bb;
+    transform: translateZ(-10px);
+    filter: url(#squiggle);
+    transition: 0.5s ease-in-out;
+  }
+  body:hover video {
+    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  }
+  body #container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    z-index: 9;
+  }
+  body #container:after {
+    content: "hover me";
+    position: absolute;
+    bottom: -25px;
+    display: inline-block;
+    color: #444;
+    font-size: 30px;
+    z-index: 99;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  body #container:before {
+    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scaleX(0);
+    background: linear-gradient(to bottom, #a496a4, #554d73);
+    transform-origin: right;
+    mix-blend-mode: hard-light;
+    transition: 0.6s ease-in-out;
+    z-index: 9;
+    position: absolute;
+    width: 890px;
+    height: 620px;
+  }
+  body canvas:not(#screenshotCanvas) {
+    width: 0;
+    height: 0;
+  }
+  body svg {
+    position: absolute;
+  }
+  body svg.frame {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    z-index: 0;
+    -webkit-clip-path: polygon(0 15%, 100% 14%, 100% 85%, 0 85%);
+            clip-path: polygon(0 15%, 100% 14%, 100% 85%, 0 85%);
+  }
+  body svg.frame foreignObject {
+    z-index: 1;
+    height: 900px;
+    width: 900px;
+    max-width: 900px;
+    max-height: 900px;
+    position: relative;
+    z-index: 2;
+  }
+  body svg.frame foreignObject.light {
+    background: #fff;
+  }
+  body svg.frame foreignObject.dark {
+    background: repeating-linear-gradient(45deg, #333, #333 2px, transparent 2px, transparent 8px, #333 8px, #333 6px), repeating-linear-gradient(40deg, #333, #333 2px, #fff 2px, #fff 8px, #333 8px, #333 6px);
+    background-position: 50% 50%;
+    -webkit-animation: bgshift 2s steps(5, end) infinite;
+            animation: bgshift 2s steps(5, end) infinite;
+  }
+  @-webkit-keyframes bgshift {
+    to {
+      background-position: calc(50% + 50px) calc(50% + 20px);
+    }
+  }
+  @keyframes bgshift {
+    to {
+      background-position: calc(50% + 50px) calc(50% + 20px);
+    }
+  }
+  body svg.frame foreignObject.dark:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    mix-blend-mode: lighten;
+  }
+  body svg.frame foreignObject.mid {
+    background: #333;
+  }
+  body video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.4);
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transition: 0.6s ease-in-out;
+    filter: saturate(0.75);
+  }
+  body img {
+    display: none;
+  }
+  body #btnwrap {
+    z-index: 9999;
+  }
